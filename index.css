@@ -1,0 +1,311 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: rgb(230, 245, 248);
+}
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "banner"
+    "container"
+    "container"
+    "container";
+    min-height: 100vh;
+    gap:30px;
+}
+
+.header{
+   
+    grid-area: header;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 5px;
+    
+}
+
+.icon_cart{
+    width: 40px;
+    height: 40px;
+    stroke: #000;
+}
+.icon_cart:hover{
+    cursor: pointer;
+}
+.header img{
+    width: 150px;
+    height: 80px;
+}
+
+.menu{
+
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+   
+    
+}
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.menu li{
+    list-style: none;
+}
+.container_icon{
+   
+    position: relative;
+}
+
+
+.menu_nav{
+   
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(230, 245, 248);
+    width: 100%;
+    z-index: 1;
+    min-height: 100vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+}
+.menu_hidden{
+    display: none;
+}
+
+.menu_nav_hidden{
+    margin-top:100px;
+}
+.menu_nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.menu_nav li{
+    list-style: none;
+}
+
+
+.icon_close{
+    width: 25px;
+    height: 25px;
+}
+.icon_close:hover{
+    stroke: red;
+    cursor: pointer;
+}
+#contador-productos{
+    font-size: 12px;
+}
+.count_products{
+    position: absolute;
+    top:55%;
+    right: 0px;
+    background-color: #000;
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/*
+Necesitamos siempre crear una clase hidden con el atributo 
+none para poder activar el toggle en el js y modificar la 
+disposicion de los elementos
+*/
+.hidden-cart{
+    display: none;
+}
+
+.container-cart-products{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    background-color: rgb(226, 221, 247);
+    width: 400px;
+    z-index: 1;
+    min-height: 70vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.cart-product{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+.titulo-producto-carrito{
+    font-size: 20px;
+}
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+.icono_burguer{
+    display: none;
+    cursor: pointer;
+}
+.icono_burguer img{
+    width: 30px;
+    height: 30px;
+}
+
+.banner{
+    
+    grid-area: banner;
+    
+}
+.banner_img{
+    width: 100%;
+}
+
+.banner_img img{
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.container_productos{
+    
+    grid-area: container;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:40px;
+    align-items: center;
+    
+}
+.producto{
+   width: 500px;
+   border-radius: 10px;
+background-color: azure;
+   
+}
+.producto figure{
+    overflow: hidden;
+}
+
+.producto:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.producto:hover img{
+    transform: scale(1.4) ;
+}
+.producto img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+.info_product{
+    padding: 15px 30px;
+   line-height: 2;
+   display: flex;
+   flex-direction: column;
+   gap:10px;
+
+}
+.info_product button{
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.price{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.foo{
+    height: 400px;
+   
+}
+.foo img{
+    margin-top: 30px;
+    width: 100%;
+    object-fit: cover;
+    height: 80%;
+
+}
+
+@media (max-width:900px) {
+    .header{
+        display: grid;
+        grid-template-areas: 
+        "menu logo cart";
+    }
+
+    .logo-tienda{
+        grid-area: logo;
+    }
+    .container_icon{
+        grid-area: cart;
+    }
+    .menu{
+        display: none;
+    }
+    
+
+    
+    .icono_burguer{
+    display: menu;
+    display:block;
+    z-index: 2;
+    }
+
+
+ }
